@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 98133ccb4595842eaab5fa7c37377929
+timeCreated: 1428076761
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - asteroid_1: {fileID: 136758, guid: db1dc8d3d061b44958a3ec4a12c1e68d, type: 2}
+  - asteroid_2: {fileID: 159344, guid: b41e4db0d7c3c41eda10a861f24e39f8, type: 2}
+  - asteroid_3: {fileID: 107572, guid: a5e01796926f144f488101af1bee15bf, type: 2}
+  - asteroid_4: {fileID: 173592, guid: 393eccb9c1f664804a6b90f5e125dfcc, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7330c9bab3aab4511ad1d66dc19616ef
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - gameOverPanel: {fileID: 101358, guid: c60c5a562b6374bc191ef070b582cf12, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2d8d968637f924150bd351c3ba86d964
+timeCreated: 1428348922
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - gameOverPanel: {fileID: 101358, guid: c60c5a562b6374bc191ef070b582cf12, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
