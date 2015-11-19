@@ -1,4 +1,6 @@
 ﻿/*
+ * This script is obsolete, but stored for possible future use.
+ * 
  * This script handles everything that deals with the swipe functions 
  * of this screen. It also handles clamping characters, and knowing
  * where the first and the last character are. Anything that needs to 

@@ -1,31 +1,46 @@
-﻿using UnityEngine;
+﻿/*
+ * This script is obsolete, but stored for possible future use.
+ * 
+ * This class handles the animation, that scales the characters
+ * up and down. This script sit in the camera gameobject and
+ * checks for gameobject tags. The tag is used to tell position 
+ * of character image relative to the camera gameobject. If the
+ * character image is center of camera gameobject then set character
+ * to 100% scale, and any other time set scale to 50%.
+ */ 
+
+using UnityEngine;
 using System.Collections;
 
 public class ScaleCharacter : MonoBehaviour 
 {
-	public Vector3 		minScale;
-	public Vector3		maxScale;
-	public GameObject	characterName;
-	public GameObject	lockedTextGO;
+	//Declare Variables
+	public GameObject	characterName;	//Character Name Texture
+	public GameObject	lockedTextGO;	
 	public GameObject	playButton;
 	public GameObject	juggDescription;
 	public GameObject	demonDescription;
-	public GameObject	cameraGO;
+	public GameObject	cameraGO;	//Hold Vector3 cords
+	public Vector3		cameraPos;	//Hold copy of camera cords
+		   Vector3 		minScale;
+	       Vector3		maxScale;
 	public Vector3		characterMin;
 	public Vector3		characterMax;
 	public Vector3		characterScaleUpPos;
-	Vector3				cameraPos;
-	[SerializeField] float 		lerpSpeed;
+	[SerializeField] float 		lerpSpeed; //Building an editable slider for adjusting in Unity enviroment
 
-	Transform			character;
+	public Vector3	character;
 
 	// Use this for initialization
 	void Start () 
 	{
-		//Grabs the image of character
+		/*
+		 * Grabs child objects of this object.
+		 * The child object is the character gameobject.
+		 */
 		foreach(Transform child in transform)
 		{
-			character = child;
+			character = child.position;
 		}
 
 	}
@@ -35,6 +50,8 @@ public class ScaleCharacter : MonoBehaviour
 	{
 		cameraPos = cameraGO.transform.position;
 
+		/*
+		 * If
 		if(cameraPos.x < characterMax.x && cameraPos.x > characterMin.x)
 		{
 			//set characters name active

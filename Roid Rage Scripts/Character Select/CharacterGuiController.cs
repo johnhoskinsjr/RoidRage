@@ -1,6 +1,6 @@
 ﻿/*
  * This script handles all the GUI functionality for the
- * character select screen
+ * character select screen.
  */ 
 
 using UnityEngine;
@@ -11,17 +11,18 @@ using UnityEngine.Cloud.Analytics;
 
 public class CharacterGuiController : MonoBehaviour
 {
-	public AudioSource 	buttonSound;
+	//Declare Variables
+	public AudioSource 	buttonSound; 	//Button SFX
 
-	public GameObject	unlockPanel;
-	public GameObject	panelTextGO;
-	public GameObject	starButtonTextGO;
-	public GameObject	moneyButtonTextGO;
-	public GameObject	yesButton;
+	public GameObject	unlockPanel; 	//Model Panel
+	public GameObject	panelTextGO;	//Dynamic Decription
+	public GameObject	starButtonTextGO;	//Star Cost Text
+	public GameObject	moneyButtonTextGO;	//Dollar Amount Text
+	public GameObject	yesButton;	
 	public GameObject	noButton;
 	public GameObject	starTextGO;
 	public GameObject	moneyTextGO;
-	public GameObject	notEnoughPanel;
+	public GameObject	notEnoughPanel;	//Text displayed when player can't afford item.
 
 	public static int	characterSelected;// 1 = Panda, 2 = Jugg, 3 = Demon
 
@@ -34,7 +35,9 @@ public class CharacterGuiController : MonoBehaviour
 
 	public int			i = 0;
 
-	void Start()
+
+	//Method called when script is first initialized.
+	public void Start()
 	{
 		NotificationCentre.AddObserver (this, "Panda");
 		NotificationCentre.AddObserver (this, "Jugg");
@@ -44,7 +47,7 @@ public class CharacterGuiController : MonoBehaviour
 		moneyText = moneyTextGO.GetComponent<Text>();
 	}
 
-	//What happens when the player presses unlock button
+	//What happens when the player presses unlock button for
 	public void UnlockButton()
 	{
 		NotificationCentre.PostNotification (this, "UnlockPanel");
@@ -65,7 +68,6 @@ public class CharacterGuiController : MonoBehaviour
 	//What happens when the player presses start button
 	public void PlayButton()
 	{
-		PushNotification.Reg ();
 		PlayerPrefs.Save ();
 		buttonSound.PlayOneShot (buttonSound.clip);
 		StartCoroutine (WaitForButtonSound());
@@ -87,6 +89,7 @@ public class CharacterGuiController : MonoBehaviour
 		buyingWithCash = false;
 		ChangeText ();
 	}
+
 	//Manages the buy with cash button
 	public void BuyWithMoney()
 	{
@@ -95,8 +98,9 @@ public class CharacterGuiController : MonoBehaviour
 		buyingWithStars = false;
 		StartCoroutine(ClosePanelForPurchase());
 	}
+
 	//Changes the text for the panel after payment option selected
-	void ChangeText()
+	public void ChangeText()
 	{
 		panelText.text = "Are you sure?";
 		yesButton.SetActive (true);
@@ -174,7 +178,7 @@ public class CharacterGuiController : MonoBehaviour
 	}
 
 	//Observer method letting GUI system know panda is current selected character
-	void Panda()
+	public void Panda()
 	{
 		starText.text = "100";
 		moneyText.text = "$ 0.99";
@@ -182,7 +186,7 @@ public class CharacterGuiController : MonoBehaviour
 	}
 
 	//Observer method letting GUI system know jugg is current selected character
-	void Jugg()
+	public void Jugg()
 	{
 		starText.text = "250";
 		moneyText.text = "$ 1.99";
@@ -190,7 +194,7 @@ public class CharacterGuiController : MonoBehaviour
 	}
 
 	//Observer method letting GUI system know demon is current selected character
-	void Demon()
+	public void Demon()
 	{
 		starText.text = "300";
 		moneyText.text = "$ 1.99";
